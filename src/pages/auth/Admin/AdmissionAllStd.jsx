@@ -31,7 +31,8 @@ export default function AdmissionAllStd() {
   const getAllFaculties = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/users/get-student`
+        // eslint-disable-next-line no-undef
+        `${process.env.REACT_APP_API_BASE_URL}/api/users/get-student`
       );
       setFaculties(data);
     } catch (error) {
@@ -44,7 +45,8 @@ export default function AdmissionAllStd() {
     if (!window.confirm("Are you sure you want to delete this student?")) return;
 
     try {
-      await axios.delete(`http://localhost:8000/api/users/delete-student/${id}`);
+      // eslint-disable-next-line no-undef
+      await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/users/delete-student/${id}`);
       toast.success("Student deleted successfully", { autoClose: 1000 });
       getAllFaculties();
     } catch (error) {
@@ -56,7 +58,8 @@ export default function AdmissionAllStd() {
   const getFaculty = async (id) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/users/get-student-single/${id}`
+        // eslint-disable-next-line no-undef
+        `${process.env.REACT_APP_API_BASE_URL}/api/users/get-student-single/${id}`
       );
       setFaculty(data);
     } catch (error) {

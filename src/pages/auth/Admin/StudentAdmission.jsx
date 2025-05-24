@@ -71,7 +71,8 @@ export default function StudentAdmission() {
     }
 
     try {
-      await axios.post(`http://localhost:8000/api/users/add-student`, record);
+    // eslint-disable-next-line no-undef
+    await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/users/add-student`, record);
       toast.success("New Admission Added", { autoClose: 1000 });
 
      

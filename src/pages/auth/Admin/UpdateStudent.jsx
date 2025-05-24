@@ -63,7 +63,9 @@ export default function UpdateStudent() {
     }
 
     try {
-      await axios.put(`http://localhost:8000/api/users/updatestudent/${id}`, record);
+   // eslint-disable-next-line no-undef
+   await axios.put(`${process.env.REACT_APP_API_BASE_URL}/api/users/updatestudent/${id}`, record);
+
       toast.success("Record Updated Successfully!", { autoClose: 1000 });
       setTimeout(() => {
         navigate(`/admissionall`);
@@ -76,7 +78,8 @@ export default function UpdateStudent() {
 
   const getstudentsDetails = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/users/get-student-single/${id}`);
+    // eslint-disable-next-line no-undef
+      const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/users/get-student-single/${id}`);
       setRecord(data);
     } catch (error) {
       console.error("Error fetching student details:", error); 

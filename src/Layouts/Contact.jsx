@@ -44,7 +44,8 @@ export default function Contact() {
     try {
       const isValid = Validation(data);
       if (isValid) {
-        await fetch("http://localhost:8000/Contacts", {
+        // eslint-disable-next-line no-undef
+        await fetch(`${process.env.REACT_APP_API_BASE_URL}/Contacts`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
