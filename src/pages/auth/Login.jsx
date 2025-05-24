@@ -55,8 +55,9 @@ export default function Login() {
     }
 
     try {
-      // eslint-disable-next-line no-undef
-      const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/users/check-email`, formData);
+    
+     const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/users/check-email`, formData);
+
 
 
       const user = res.data?.user;

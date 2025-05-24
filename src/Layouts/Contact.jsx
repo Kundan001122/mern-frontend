@@ -45,7 +45,7 @@ export default function Contact() {
       const isValid = Validation(data);
       if (isValid) {
         // eslint-disable-next-line no-undef
-        await fetch(`${process.env.REACT_APP_API_BASE_URL}/Contacts`, {
+        await fetch(`${import.meta.env.VITE_API_BASE_URL}/Contacts`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),

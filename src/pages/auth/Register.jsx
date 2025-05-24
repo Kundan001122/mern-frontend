@@ -48,8 +48,8 @@ export default function Register() {
     }
 
     try {
-      // eslint-disable-next-line no-undef
-      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/users/register`, {
+     
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
