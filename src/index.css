@@ -1,0 +1,373 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.images2 {
+    background-image: linear-gradient(#04091eb3, rgba(4, 9, 30, 0.7)), url("https://jmrocketreporter.org/wp-content/uploads/2016/04/friends.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35rem;
+    width: 100%;
+    transform: translate(0rem, -6.6rem);
+}
+
+.courses3 {
+    margin-top: 2rem;
+}
+
+.bca3 {
+    margin-top: 55px;
+}
+
+.adminmenu {
+    transform: translate(3px, 0rem);
+    margin-top: 3rem;
+    width: 15.8rem;
+    font-size: 25px;
+}
+
+@media (max-width: 768px) {
+    .courses3 {
+        transform: translate(2rem, -2rem);
+        margin-top: 5rem;
+        width: 15.8rem;
+    }
+    .courses2 {
+        text-align: justify;
+        justify-items: center;
+        font-size: 16px;
+        width: 15rem;
+    }
+    .bca3 {
+        transform: translate(2rem, 0rem);
+        margin-top: 5rem;
+    }
+    .bca2 {
+        text-align: justify;
+        justify-items: center;
+        font-size: 15px;
+        transform: translate(2rem, 0rem);
+    }
+    .adminmenu {
+        transform: translate(3px, 0rem);
+        margin-top: 3rem;
+        width: 15.8rem;
+    }
+    .admission h1 {
+        text-align: justify;
+        text-align: center;
+    }
+}
+
+
+/* close courses page */
+
+.text h1 {
+    text-align: center;
+    width: 30rem;
+    margin-top: 10rem;
+    color: white;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transform: translate(25rem, 10rem);
+    border-radius: 10px;
+}
+
+.p-tag {
+    text-align: center;
+    border-radius: 7px;
+    color: white;
+    width: 30rem;
+    transform: translate(25rem, 10rem);
+    font-size: medium;
+    font-weight: 800;
+    padding: 5px;
+}
+
+.ash {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    transform: translate(33rem, 10rem);
+}
+
+.ash:hover {
+    cursor: pointer;
+    border: 1px solid #f44336;
+    background: #f44336;
+    transform: 1s;
+}
+
+.main2 {
+    background-color: rgb(244, 249, 252);
+    text-align: center;
+    width: 100%;
+    margin-top: 3.8rem;
+    justify-items: center;
+    text-align: justify;
+    font-size: 25px;
+}
+
+.admission {
+    color: white;
+    background: linear-gradient(200deg, #12C2E9, #F64F59);
+    text-align: center;
+    width: 100%;
+    margin-top: -6.7rem;
+    justify-items: center;
+    text-align: justify;
+    text-align: center;
+    height: 2.7rem;
+}
+
+.main3 {
+    background-color: rgb(244, 249, 252);
+    text-align: center;
+    width: 100%;
+    margin-top: 3.4rem;
+    background: linear-gradient(200deg, #12C2E9, #F64F59);
+    color: white;
+    font-size: 28px;
+}
+
+.contactForm2 {
+    color: white;
+    background: linear-gradient(200deg, #12C2E9, #F64F59);
+    text-align: center;
+    width: 100%;
+    justify-items: center;
+    text-align: justify;
+    text-align: center;
+    height: 2.7rem;
+    transform: translate(0rem, -0.10rem);
+}
+
+.loginPage2 textarea {
+    border-top: 2px solid hotpink;
+    border-bottom: 2px solid darkorange;
+    border-left: 2px solid darkturquoise;
+    border-right: 2px solid rgb(23, 214, 119);
+    border-radius: 6px;
+    margin-top: 7px;
+}
+
+.contact2 {
+    margin-top: 4.4rem;
+}
+
+@media (max-width: 768px) {
+    .contactForm2 {
+        transform: translate(-0%, -90%);
+    }
+    .contact2 {
+        margin-top: 6.4rem;
+    }
+    .loginPage2 textarea {
+        transform: translate(-0%, 0%);
+        margin-top: 7px;
+    }
+    .loginPage3 textarea {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .text h1 {
+        transform: translate(0rem, 9rem);
+        width: 100%;
+        margin-top: 4rem;
+        color: white;
+        font-weight: 600;
+    }
+    .ash {
+        transform: translate(0rem, 9rem);
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+    }
+    .p-tag {
+        text-align: justify;
+        text-align: center;
+        justify-items: center;
+        justify-content: center;
+        transform: translate(0rem, 9rem);
+        width: 100%;
+    }
+    .images2 {
+        background-size: cover 100%;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 31rem;
+        margin-top: 10.3rem;
+    }
+    .form {
+        margin-top: 2rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .about2 {
+        width: 100%;
+        padding: 7px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 400;
+        justify-items: center;
+        text-align: justify;
+    }
+    .about_3 {
+        text-align: justify;
+        justify-items: center;
+        font-size: 12px;
+        width: 100%;
+        padding: 5px;
+    }
+    .main3 {
+        width: 100%;
+        background: linear-gradient(200deg, #12C2E9, #F64F59);
+        color: white;
+        font-size: 22px;
+        margin-top: 3.4rem;
+    }
+    .main2 {
+        margin-top: 4rem;
+        width: 100%;
+        text-align: justify;
+        width: 15.8rem;
+    }
+    .kundan2 {
+        margin-left: -5px;
+        padding: 5px;
+    }
+    .kundan3 {
+        margin-left: -10px;
+    }
+}
+
+.login2 {
+    margin-top: 4rem;
+}
+
+.loginPage {
+    width: 50%;
+    height: 2.7rem;
+    border-top: 2px solid hotpink;
+    border-bottom: 2px solid darkorange;
+    border-left: 2px solid darkturquoise;
+    border-right: 2px solid rgb(23, 214, 119);
+    border-radius: 6px;
+    margin: 3px;
+}
+
+.LoginForm {
+    margin: 3px;
+}
+
+.LoginForm2 h2 {
+    margin-top: 2.5rem;
+    font-weight: 550;
+    color: white;
+    background: linear-gradient(200deg, #12C2E9, #F64F59);
+}
+
+@media (max-width: 768px) {
+    .LoginForm2 h2 {
+        margin-top: -0.10rem;
+        font-weight: 550;
+        color: white;
+        background: linear-gradient(200deg, #12C2E9, #F64F59);
+    }
+    .loginPage {
+        width: 48vh;
+        transform: translate(1%, 0%);
+        margin: 5px;
+    }
+}
+
+.main2 {
+    text-align: center;
+    margin-left: -8px;
+    width: 105%;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    background: linear-gradient(200deg, #12C2E9, #F64F59);
+}
+
+
+/* AdmissionAllstudents  */
+
+.loginPage2 {
+    width: 50%;
+    height: 2.7rem;
+    border-top: 2px solid hotpink;
+    border-bottom: 2px solid darkorange;
+    border-left: 2px solid darkturquoise;
+    border-right: 2px solid rgb(23, 214, 119);
+    border-radius: 6px;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .loginPage2 {
+        width: 48vh;
+        transform: translate(1%, 0%);
+        margin: 5px;
+    }
+}
+
+.adminad {
+    color: green;
+}
+
+@media (max-width: 768px) {
+    .Flexmain {
+        width: 100%;
+    }
+    .adminad th {
+        padding: 4px;
+        color: green;
+        font-size: 14px;
+    }
+    .adminad {
+        border: 2px solid blue;
+    }
+    .emailadres {
+        width: 100%;
+        font-size: 18px;
+    }
+    .tables {
+        width: 100%;
+        font-size: 18px;
+        border: 2px solid green;
+    }
+    .logo_name {
+        font-size: 22px;
+        width: 100%;
+    }
+}
+
+.darkmode {
+    background-color: #140B5C;
+    text-align: center;
+}
+
+.navbar-toggler {
+    background-color: #12C2E9;
+}
+
+.dropdown-menu {
+    text-align: center;
+    background-color: #140B5C;
+}
+
+.nav-link {
+    font-family: monospace;
+}
+
+.dropdown-item {
+    font-family: monospace;
+}

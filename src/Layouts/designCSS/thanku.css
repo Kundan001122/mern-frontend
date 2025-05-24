@@ -1,0 +1,12 @@
+.kundan {
+    background-image: url('https://gifdb.com/images/high/cottagecore-flower-garden-aesthetic-9vahgp20f8t5syii.gif');
+    animation: mymove 5s infinite;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+@keyframes mymove {
+    from {
+        background-image: url('https://i.gifer.com/T0T3.gif');
+    }
+}
