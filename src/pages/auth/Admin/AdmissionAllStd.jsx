@@ -7,8 +7,8 @@ import { NavLink } from "react-router-dom";
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 export default function AdmissionAllStd() {
-  const [faculties, setFaculties] = useState([]);
-  const [faculty, setFaculty] = useState({});
+  const [students, setStudents] = useState([]);
+  const [student, setStudent] = useState({});
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -16,62 +16,59 @@ export default function AdmissionAllStd() {
   const lastIndex = currentPage * recordPerPage;
   const firstIndex = lastIndex - recordPerPage;
 
-  const filtered = faculties.filter((f) =>
-    f.name.toLowerCase().includes(search.toLowerCase())
+  const filtered = students.filter((s) =>
+    s.name?.toLowerCase().includes(search.toLowerCase())
   );
 
   const records = filtered.slice(firstIndex, lastIndex);
   const nPage = Math.ceil(filtered.length / recordPerPage);
-  const numbers = [...Array(nPage).keys()];
+  const numbers = [...Array(nPage)].map((_, i) => i + 1);
 
   useEffect(() => {
-    getAllFaculties();
+    getAllStudents();
   }, []);
 
-  const getAllFaculties = async () => {
+  const getAllStudents = async () => {
     try {
       const { data } = await axios.get(
-        // eslint-disable-next-line no-undef
         `${import.meta.env.VITE_API_BASE_URL}/api/users/get-student`
       );
-      setFaculties(data);
+      setStudents(data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       toast.error("Failed to fetch students");
     }
   };
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this student?")) return;
-
     try {
-      // eslint-disable-next-line no-undef
-    await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/users/delete-student/${id}`);
-
+      await axios.delete(
+        `${import.meta.env.VITE_API_BASE_URL}/api/users/delete-student/${id}`
+      );
       toast.success("Student deleted successfully", { autoClose: 1000 });
-      getAllFaculties();
+      getAllStudents();
     } catch (error) {
-      console.log(error);
+      console.error(error);
       toast.error("Failed to delete");
     }
   };
 
-  const getFaculty = async (id) => {
+  const getStudent = async (id) => {
     try {
       const { data } = await axios.get(
-        // eslint-disable-next-line no-undef
         `${import.meta.env.VITE_API_BASE_URL}/api/users/get-student-single/${id}`
       );
-      setFaculty(data);
+      setStudent(data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       toast.error("Failed to fetch student details");
     }
   };
 
   return (
     <Layout>
-      {/* View Modal */}
+     
       <div
         className="modal fade"
         id="exampleModal"
@@ -99,20 +96,20 @@ export default function AdmissionAllStd() {
               <table className="table table-bordered">
                 <tbody>
                   {[
-                    { label: "Name", value: faculty.name },
-                    { label: "Father", value: faculty.father },
-                    { label: "Mother", value: faculty.mother },
-                    { label: "Phone", value: faculty.number },
-                    { label: "Address", value: faculty.address },
-                    { label: "10th Board", value: faculty.selectboard10th },
-                    { label: "10th %", value: faculty.percentage10th },
-                    { label: "12th Stream", value: faculty.stream12 },
-                    { label: "12th %", value: faculty.percentage12th },
-                    { label: "Father's Occupation", value: faculty.faoccuption },
-                    { label: "Course", value: faculty.adcourse },
-                    { label: "Aadhar", value: faculty.adharnumber },
-                    { label: "DOB", value: faculty.birth },
-                    { label: "Email", value: faculty.email },
+                    { label: "Name", value: student.name },
+                    { label: "Father", value: student.father },
+                    { label: "Mother", value: student.mother },
+                    { label: "Phone", value: student.number },
+                    { label: "Address", value: student.address },
+                    { label: "10th Board", value: student.selectboard10th },
+                    { label: "10th %", value: student.percentage10th },
+                    { label: "12th Stream", value: student.stream12 },
+                    { label: "12th %", value: student.percentage12th },
+                    { label: "Father's Occupation", value: student.faoccuption },
+                    { label: "Course", value: student.adcourse },
+                    { label: "Aadhar", value: student.adharnumber },
+                    { label: "DOB", value: student.birth },
+                    { label: "Email", value: student.email },
                   ].map(({ label, value }) => (
                     <tr key={label}>
                       <th style={{ width: "40%" }}>{label}</th>
@@ -135,15 +132,13 @@ export default function AdmissionAllStd() {
         </div>
       </div>
 
-   
+     
       <div className="container my-4">
         <div className="row">
-          {/* Sidebar */}
           <div className="col-md-3">
             <AdminMenu />
           </div>
 
-          {/* Student Table */}
           <div
             className="col-md-9 p-4 rounded shadow"
             style={{ background: "#fef6ff", borderLeft: "5px solid #8e44ad" }}
@@ -185,13 +180,13 @@ export default function AdmissionAllStd() {
                       </td>
                     </tr>
                   ) : (
-                    records.map((faculty, i) => (
-                      <tr key={faculty._id}>
+                    records.map((std, i) => (
+                      <tr key={std._id}>
                         <td>{firstIndex + i + 1}</td>
-                        <td>{faculty.name}</td>
+                        <td>{std.name}</td>
                         <td className="text-center">
                           <NavLink
-                            to={`/updatestudent/${faculty._id}`}
+                            to={`/updatestudent/${std._id}`}
                             className="btn btn-sm btn-outline-success me-2"
                             title="Edit"
                           >
@@ -199,7 +194,7 @@ export default function AdmissionAllStd() {
                           </NavLink>
                           <button
                             className="btn btn-sm btn-outline-danger me-2"
-                            onClick={() => handleDelete(faculty._id)}
+                            onClick={() => handleDelete(std._id)}
                             title="Delete"
                           >
                             🗑️
@@ -209,7 +204,7 @@ export default function AdmissionAllStd() {
                             className="btn btn-sm btn-outline-primary"
                             data-bs-toggle="modal"
                             data-bs-target="#exampleModal"
-                            onClick={() => getFaculty(faculty._id)}
+                            onClick={() => getStudent(std._id)}
                             title="View"
                           >
                             👁️
@@ -229,20 +224,20 @@ export default function AdmissionAllStd() {
                   <PaginationItem disabled={currentPage === 1}>
                     <PaginationLink
                       previous
-                      onClick={() => setCurrentPage(currentPage - 1)}
+                      onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                     />
                   </PaginationItem>
-                  {numbers.map((n, i) => (
-                    <PaginationItem key={i} active={currentPage === n + 1}>
-                      <PaginationLink onClick={() => setCurrentPage(n + 1)}>
-                        {n + 1}
-                      </PaginationLink>
+                  {numbers.map((n) => (
+                    <PaginationItem key={n} active={currentPage === n}>
+                      <PaginationLink onClick={() => setCurrentPage(n)}>{n}</PaginationLink>
                     </PaginationItem>
                   ))}
                   <PaginationItem disabled={currentPage === nPage}>
                     <PaginationLink
                       next
-                      onClick={() => setCurrentPage(currentPage + 1)}
+                      onClick={() =>
+                        setCurrentPage((prev) => Math.min(prev + 1, nPage))
+                      }
                     />
                   </PaginationItem>
                 </Pagination>

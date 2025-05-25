@@ -71,7 +71,7 @@ export default function StudentAdmission() {
     }
 
     try {
-    // eslint-disable-next-line no-undef
+    
       await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/users/add-student`, record);
       toast.success("New Admission Added", { autoClose: 1000 });
 

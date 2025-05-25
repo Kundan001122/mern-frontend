@@ -29,7 +29,7 @@ export default function Login() {
     }
   };
 
-  //Form Validation
+  
   function Validation(data) {
     let newErrors = {};
 
@@ -106,7 +106,7 @@ export default function Login() {
           <div className="card-body p-4">
             <form onSubmit={handleLogin}>
 
-              {/* Email Field */}
+             
               <div className="mb-3">
                 <label htmlFor="email" className="form-label visually-hidden">Email</label>
                 <input
@@ -118,7 +118,7 @@ export default function Login() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  style={{ borderRadius: '0.5rem', borderColor: '#C0C0C0' }} // Light gray border
+                  style={{ borderRadius: '0.5rem', borderColor: '#C0C0C0' }}
                 />
                 {errors.email && (
                   <div className="invalid-feedback">

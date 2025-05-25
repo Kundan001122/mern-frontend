@@ -1,18 +1,18 @@
-import React from 'react'
-import Nav from './Nav'
-import Footer from './Footer'
+import React from 'react';
+import Nav from './Nav';
+import Footer from './Footer';
 
-
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <>
-    <Nav />
-   
+      <Nav />
 
-    {children}
-    
-    <Footer />
 
+      <main className="container-fluid my-4 px-3" style={{ minHeight: '80vh' }}>
+        {children}
+      </main>
+
+      <Footer />
     </>
-  )
+  );
 }

@@ -9,20 +9,21 @@ export default function AdminAdmission() {
 
   return (
     <Layout>
-      <div className="container my-4">
+      <div className="container-fluid my-4">
         <div className="row">
-          {/* Sidebar */}
-          <div className="col-md-3">
+         
+          <div className="col-12 col-md-4 col-lg-3 mb-3">
             <AdminMenu />
           </div>
 
-          {/* Main Content */}
-          <div className="col-md-9">
+          
+          <div className="col-12 col-md-8 col-lg-9">
             <div
               className="p-4 rounded shadow"
               style={{
                 background: "#fef6ff",
                 borderLeft: "5px solid #8e44ad",
+                minHeight: "60vh",
               }}
             >
               <h3

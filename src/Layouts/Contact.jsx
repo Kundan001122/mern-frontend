@@ -44,7 +44,7 @@ export default function Contact() {
     try {
       const isValid = Validation(data);
       if (isValid) {
-        // eslint-disable-next-line no-undef
+       
         await fetch(`${import.meta.env.VITE_API_BASE_URL}/Contacts`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
